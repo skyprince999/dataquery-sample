@@ -17,7 +17,11 @@ def get_mysql_connection():
 
 def main():
   conn = get_mysql_connection()
-  
+  cursor = conn.cursor()
+  databases = ("show databases")
+  cursor.execute(databases)
+  for (databases) in cursor:
+      print(databases)
   return 
 
 # Run Server
