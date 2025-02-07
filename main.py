@@ -17,7 +17,7 @@ def get_mysql_connection():
             database="bpd"
         )
     
-    engine = create_engine(f"mysql+pymysql://root:{enc_pwd}@10.10.23.4:3036/bpd")
+    engine = create_engine(f"mysql+pymysql://root:{enc_pwd}@10.10.23.4:3306/bpd")
     
     return connection, engine
 
