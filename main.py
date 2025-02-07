@@ -14,7 +14,7 @@ def get_mysql_connection():
     return connection
 
 
-
+#Need to add some code for populating the tables
 def main():
   conn = get_mysql_connection()
   cursor = conn.cursor()
