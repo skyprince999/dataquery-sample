@@ -9,7 +9,7 @@ def get_mysql_connection():
             host="10.10.23.4",
             user="root",
             password="r00tp@ssw0rd",
-            database="bdp"
+            database="bpd"
         )
     return connection
 
