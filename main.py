@@ -11,17 +11,24 @@ def get_mysql_connection():
             password="r00tp@ssw0rd",
             database="bpd"
         )
-    return connection
+    engine = create_engine(f"mysql+pymysql://root:r00tp@ssw0rd@10.10.23.4:3036/bpd")
+    
+    return connection, engine
 
 
 #Need to add some code for populating the tables
 def main():
-  conn = get_mysql_connection()
+  conn, engine = get_mysql_connection()
   cursor = conn.cursor()
   databases = ("show databases")
   cursor.execute(databases)
   for (databases) in cursor:
       print(databases)
+  df = pd.read_excel("MatCat_Mapping_NOV2024.xlsx")
+  print(df.shape)
+  df.to_sql("catalogue", con=engine, if_exists="replace", index=False)
+  engine.dispose()
+  conn.close()
   return 
 
 # Run Server
