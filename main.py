@@ -81,7 +81,7 @@ def main():
   df.to_sql("catalog", con=engine, if_exists="replace", index=False)
 
   #Populate GRN data 
-  df = pd.read_excel("grnreport_nov.xlsx")
+  df = pd.read_excel("grnreport_nov.XLSX")
   print(f"GRN : {df.shape}")
 
   df.rename(str.lower, axis='columns', inplace=True)
