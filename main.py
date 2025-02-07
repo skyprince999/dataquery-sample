@@ -44,7 +44,7 @@ def main():
   for table in record:
       print(table)
 
-  query = "DROP TABLE catalogue;"
+  query = "DROP TABLE IF EXISTS catalogue;"
   cursor.execute(query)
   cursor.commit()
   engine.dispose()
