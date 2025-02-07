@@ -36,6 +36,14 @@ def main():
   df = pd.read_excel("MatCat_Mapping_NOV2024.xlsx")
   print(df.shape)
   df.to_sql("catalogue", con=engine, if_exists="replace", index=False)
+
+  query = "SELECT * FROM information_schema.tables WHERE table_schema = 'bpd';"
+  cursor.execute(query)
+  record = cursor.fetchall()
+  print("You're connected to database: ")
+  for table in record:
+      print(table)
+      
   engine.dispose()
   conn.close()
   return 
