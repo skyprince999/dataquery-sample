@@ -74,26 +74,26 @@ def main():
   for (databases) in cursor:
       print(databases)
 
-  #Populate Material code
-  df = pd.read_excel("MatCat_Mapping_NOV2024.xlsx")
-  print(f"Catalog : {df.shape}")
-  print(f"Catalog cols: {df.columns}")
-  df.to_sql("catalog", con=engine, if_exists="replace", index=False)
+  # #Populate Material code
+  # df = pd.read_excel("MatCat_Mapping_NOV2024.xlsx")
+  # print(f"Catalog : {df.shape}")
+  # print(f"Catalog cols: {df.columns}")
+  # df.to_sql("catalog", con=engine, if_exists="replace", index=False)
 
-  #Populate GRN data 
-  df = pd.read_excel("grnreport_nov.XLSX")
-  print(f"GRN : {df.shape}")
+  # #Populate GRN data 
+  # df = pd.read_excel("grnreport_nov.XLSX")
+  # print(f"GRN : {df.shape}")
 
-  df.rename(str.lower, axis='columns', inplace=True)
-  for col in df.columns:
-    new_col = col.replace(" ", "_")
-    # print(col, new_col)
-    df.rename(columns={col: new_col}, inplace=True)
+  # df.rename(str.lower, axis='columns', inplace=True)
+  # for col in df.columns:
+  #   new_col = col.replace(" ", "_")
+  #   # print(col, new_col)
+  #   df.rename(columns={col: new_col}, inplace=True)
   
-  df = financial_year(df, "document_date")
-  df = map_catalog(df)
-  print(f"GRN cols: {df.columns}")
-  df.to_sql("grnreport", con=engine, if_exists="replace", index=False)
+  # df = financial_year(df, "document_date")
+  # df = map_catalog(df)
+  # print(f"GRN cols: {df.columns}")
+  # df.to_sql("grnreport", con=engine, if_exists="replace", index=False)
 
   #Populate Purchase data 
 
