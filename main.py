@@ -46,7 +46,7 @@ def main():
 
   query = "DROP TABLE catalogue;"
   cursor.execute(query)
-
+  cursor.commit()
   engine.dispose()
   conn.close()
   return 
