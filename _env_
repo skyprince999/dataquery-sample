@@ -1,0 +1,9 @@
+MYSQL_USER="root"
+MYSQL_PASSWORD="rootpassword"
+MYSQL_HOST="4.188.80.102"
+MYSQL_DB="bdp"
+AZURE_OPENAI_BASE="https://ai-aakashai861521135111.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview"
+AZURE_OPENAI_APIKEY="f881c790862b4f03988c8ff02b6fbfbc"
+AZURE_API_VERSION="2024-08-01-preview"
+AZURE_DEPLOYMENT="gpt-4"
+
