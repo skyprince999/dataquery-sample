@@ -3,7 +3,7 @@ import mysql.connector
 from sqlalchemy import create_engine
 import urllib.parse
 
-password = "r00tp@ssw0rd" 
+password = "" 
 
 
 def get_mysql_connection():
@@ -12,13 +12,13 @@ def get_mysql_connection():
     enc_pwd = urllib.parse.quote(password)
   
     connection = mysql.connector.connect(
-            host="10.10.23.4",
-            user="root",
-            password="r00tp@ssw0rd",
-            database="bpd"
+            host="",
+            user="",
+            password="",
+            database=""
         )
     
-    engine = create_engine(f"mysql+pymysql://root:{enc_pwd}@10.10.23.4:3306/bpd")
+    engine = create_engine(f"mysql+pymysql://root:{enc_pwd}@#######:####/########")
     
     return connection, engine
 
